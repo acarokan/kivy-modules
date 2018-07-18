@@ -1,0 +1,3 @@
+toastmessage = ToastMessage("message","time")
+
+
