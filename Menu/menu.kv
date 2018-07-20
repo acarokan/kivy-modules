@@ -1,0 +1,73 @@
+<Menu>:
+
+	orientation: "vertical"
+	size_hint: None,1
+	width: 20
+	header_image: _header_image
+	main_box: _main_box
+	header_text: _header_text
+
+	BoxLayout:
+
+		orientation: "vertical"
+		canvas.before:
+			Color:
+				rgba: root.header_background_color
+
+			Rectangle:
+				pos: self.pos
+				size: self.size
+				source: root.header_background_image
+				
+		size_hint: 1,0.4
+		padding: 0,10,0,10
+		
+		AnchorLayout:
+			anchor_x: "right"
+			anchor_y: "top"
+			size_hint: 1,0.1
+			Button:
+				size_hint: None,None
+				size: 20,20
+				background_normal: "images/menu.png"
+				background_down: "images/menu_down.png"
+				on_release: root.switch_menu()
+		BoxLayout:
+
+			size_hint: None,1
+			width: self.height
+			pos_hint: {"center_x":0.5,"center_y":0.5}
+			id: _header_image
+			canvas.before:
+			
+				Color:
+					rgba: 1,1,1,1
+				Ellipse:
+					pos: self.pos
+					size: self.size
+					source: root.header_icon
+		Label:
+			id: _header_text
+			size_hint:1,None
+			height: 20
+			halign: "center"
+			text: "programmed by gereksizadam"
+			text_size: self.size
+
+	StackLayout:
+		id: _main_box
+		padding: 20
+		spacing: 10
+		canvas.before:
+
+			Color:
+				rgba:root.background_color
+			Rectangle:
+				pos: self.pos
+				size: self.size
+				source: root.background_image
+
+		
+			
+	
+
